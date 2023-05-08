@@ -11,23 +11,23 @@ import (
 
 //Embed is a struct representing a Discord embed object
 type Embed struct {
-	Username  string         `json:"username"`
-	AvatarURL string         `json:"avatar_url"`
+	Username  string         `json:"username,omitempty"`
+	AvatarURL string         `json:"avatar_url,omitempty"`
 	Content   string         `json:"content"`
-	Embeds    []EmbedElement `json:"embeds"`
+	Embeds    []EmbedElement `json:"embeds,omitempty"`
 }
 
 //EmbedElement is a struct representing an Embed element of the Embed struct
 type EmbedElement struct {
-	Author      Author  `json:"author"`
+	Author      Author  `json:"author,omitempty"`
 	Title       string  `json:"title"`
-	URL         string  `json:"url"`
+	URL         string  `json:"url,omitempty"`
 	Description string  `json:"description"`
 	Color       int64   `json:"color"`
 	Fields      []Field `json:"fields"`
 	Thumbnail   Image   `json:"thumbnail,omitempty"`
 	Image       Image   `json:"image,omitempty"`
-	Footer      Footer  `json:"footer"`
+	Footer      Footer  `json:"footer,omitempty"`
 }
 
 //Author represents the author of the embed
